@@ -111,7 +111,8 @@ public class EjercicioUno {
 		mediaCollection.findOneAndUpdate(filtroDocument, updateDocument);
 	}
 
-	public static void ejercicioCuatro(MongoCollection<Document> mediaCollection) {
+	public static void ejercicioCuatro() {
+		MongoCollection<Document> mediaCollection = database.getCollection("media");
 		// Crear el filtro y la actualización correspondientes
 		Document filtroDocument = new Document("Titulo", "Matrix");
 		Document updateDocument = new Document("$set", new Document("genero", "ciencia ficción"));
@@ -120,7 +121,8 @@ public class EjercicioUno {
 		mediaCollection.updateOne(filtroDocument, updateDocument);
 	}
 
-	public static void ejercicioCinco(MongoCollection<Document> mediaCollection) {
+	public static void ejercicioCinco() {
+		MongoCollection<Document> mediaCollection = database.getCollection("media");
 		// Crear el filtro y la actualización correspondientes
 		Document filtroDocument = new Document("titulo", "Java para todos");
 		Document updateDocument = new Document("$unset", new Document("editorial", ""));
@@ -129,7 +131,8 @@ public class EjercicioUno {
 		mediaCollection.updateOne(filtroDocument, updateDocument);
 	}
 
-	public static void ejercicioSeis(MongoCollection<Document> mediaCollection) {
+	public static void ejercicioSeis() {
+		MongoCollection<Document> mediaCollection = database.getCollection("media");
 		// Crear el filtro y la actualización correspondientes
 		Document filtroDocument = new Document("titulo", "Java para todos");
 		Document updateDocument = new Document("$push", new Document("Autor", "María Sancho"));
@@ -138,7 +141,8 @@ public class EjercicioUno {
 		mediaCollection.updateOne(filtroDocument, updateDocument);
 	}
 
-	public static void ejercicioSiete(MongoCollection<Document> mediaCollection) {
+	public static void ejercicioSiete() {
+		MongoCollection<Document> mediaCollection = database.getCollection("media");
 		// Crear el filtro y la actualización correspondientes
 		Document filtroDocument = new Document("Titulo", "Matrix");
 		Document updateDocument = new Document("$pop", new Document("actores", -1));
@@ -148,7 +152,8 @@ public class EjercicioUno {
 		mediaCollection.updateOne(filtroDocument, updateDocument);
 	}
 
-	public static void ejercicioOcho(MongoCollection<Document> mediaCollection) {
+	public static void ejercicioOcho() {
+		MongoCollection<Document> mediaCollection = database.getCollection("media");
 		// Crear el filtro para encontrar el documento "Recuerdos"
 		Document filtro = new Document("Titulo", "Recuerdos").append("tipo", "CD");
 
